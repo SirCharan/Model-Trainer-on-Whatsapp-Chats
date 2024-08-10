@@ -132,7 +132,7 @@ def check_for_new_messages(contact_name):
             # Check for new messages
             messages = driver.find_elements(By.XPATH, '//div[contains(@class, "message-in")]')
             if messages:
-                last_message = messages[-1].find_element(By.XPATH, './/span[contains(@class, "selectable-text invisible-space copyable-text")]').text
+                last_message = messages[-1].find_element(By.XPATH, '').text #enter div of text messages
                 print(f"New message from {contact_name}: {last_message}")
                 prompt=last_message
                 inputs = tokenizer(prompt, return_tensors="pt")
